@@ -13,7 +13,7 @@ app.post('/todos', (req,res) => {
   var newTodo = new Todo({
     text: req.body.text
   });
-
+  
   newTodo.save().then((docs) => {
     res.send(docs);
   }, (err) => {
@@ -22,4 +22,6 @@ app.post('/todos', (req,res) => {
 })
 
 app.listen(8000);
+
+module.exports = {app};
 
